@@ -29,3 +29,13 @@
    ssh -T github-xxx
    git fetch
    ```
+
+### 長いパスを扱えるようにする
+
+git config --system core.longpaths true
+
+## コマンド
+
+- タグをチェックアウト
+
+git checkout refs/tags/[tagname]
