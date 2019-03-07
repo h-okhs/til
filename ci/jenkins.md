@@ -12,9 +12,15 @@
 - PowerShell プラグインで PowerShell コマンドを実行する場合は Master を WindowsContainer で動かさないと動かない  
   Bat コマンドから PowerShell なら可能
 
+## パイプライン
+
+- Pipeline で始めるのが Declarative Pipeline, node で始めるのが Scripted Pipeline
+
 ## 小ネタ
 
 - コマンドプロンプトや PowerShell ウィンドウを立ち上げる場合は Start-Process を使う
+- JENKINS_ROOT_URL/safeRestart で再起動指示画面に行ける
+- sudo したいときは /etc/sudoers.d 配下にファイルを配置
 
 ## Docker jenkins
 

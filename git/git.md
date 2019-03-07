@@ -1,5 +1,9 @@
 # GIT
 
+## アンチパターン
+
+<https://speakerdeck.com/lemiorhan/10-git-anti-patterns-you-should-be-aware-of>
+
 ## Windows 用 初期設定
 
 ### SSH 鍵を独自のファイル名にし、パスフレーズの入力を省略する

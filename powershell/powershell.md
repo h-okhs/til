@@ -4,6 +4,7 @@
 
 - コマンドの場所：Get-Command ssh
 - grep 的な：Select-String
+- eval 的な : Invoke-Expression
 
 ## その他
 
