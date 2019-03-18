@@ -5,11 +5,50 @@
 - screen  
   長時間かかるコマンド実行などの場合に？開始してから Ctrl+a,d
   -ls -> -r(アタッチ)
-- tar -zxvf
+- tar
+  - -zxvf
+  - -zx
 - CONFIGURE_OPTS="--disable-install-rdoc" rbenv install 2.2.4  
   ruby インストール
 - jq  
   Json いじるツール
+- curl
+  - -X GET HTTP メソッド指定
+  - -u USER:PASSWORD
+  - -H "Content-Type:application/json"
+  - -d {"id":"aaa", "text":"東京" } データ指定
+  - --data-binary @filename (ファイル内容送信)
+- xargs
+  - 標準出力を引数にコマンド実行 echo a b c d | xargs -I{} basename {}
+  - -t コマンド表示
+  - -n 引数として使う入力の個数
+- sed
+  - 正規表現置換したうえで標準出力できる
+  - デリミタわりと自由
+- rpm
+  - -ivh インストール
+- シンボリックリンク
+  - 実体コピー cp -L symlink copied
+  - 実体をアーカイブ tar h オプション
+
+## Shell
+
+- if
+
+  ```
+    if [ $aa -eq 0 ] ; then
+        echo aa
+    elif
+        ...
+    else
+        ...
+    fi
+  ```
+
+- ディレクトリ存在チェック  
+  if [ -d "$DIRECTORY" ] ; then
+- not
+  - if [ ! $aa = "aa" ] ; then
 
 ## vim
 
@@ -72,10 +111,14 @@ $ sudo systemctl enable hello_world
 
 ## 他
 
-- リポジトリ  
-  `$ sudo sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.iij.ad.jp/pub/linux/ubuntu/archive/%g" /etc/apt/sources.list`
+- リポジトリ変更
+  ```
+  sudo sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.iij.ad.jp/pub/linux/ubuntu/archive/%g" /etc/apt/sources.list
+  ```
 - 開発ツールインストール
+  ```
   sudo apt-get install build-essenstial
+  ```
 - コンパイル時に lib が見つからないエラー
   共有ライブラリの探索パス追加
 
@@ -83,3 +126,5 @@ $ sudo systemctl enable hello_world
   mecab-config --libs-only-L | sudo tee /etc/ld.so.conf.d/mecab.conf
   sudo ldconfig
   ```
+
+- SSH の鍵と config は自分オーナー 600 にする
