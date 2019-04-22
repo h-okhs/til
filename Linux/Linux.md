@@ -5,6 +5,7 @@
 - screen  
   長時間かかるコマンド実行などの場合に？開始してから Ctrl+a,d
   -ls -> -r(アタッチ)
+  スクロール
 - tar
   - -zxvf
   - -zx
@@ -30,9 +31,15 @@
 - シンボリックリンク
   - 実体コピー cp -L symlink copied
   - 実体をアーカイブ tar h オプション
+- rename
+  - rename perl 正規表現 対象ファイル
+  - rename s/.csv/.tsv/ \*.csv
 
-## Shell
+## Shell スクリプト
 
+- trap
+  最後に必ず実行するコマンドを記述
+  trap "rm /tmp/..." 0
 - if
 
   ```
@@ -49,6 +56,7 @@
   if [ -d "$DIRECTORY" ] ; then
 - not
   - if [ ! $aa = "aa" ] ; then
+- $!で直前実行のプロセスのPID取得　$?で終了ステータス
 
 ## vim
 
@@ -58,10 +66,6 @@
 - y コピー
 - p 貼り付け
 - dd 1 行削除
-
-## スクリプト
-
-- $!で直前実行のプロセスのPID取得　$?で終了ステータス
 
 ## タイムゾーン変更
 
@@ -107,6 +111,17 @@ $ sudo systemctl start hello_world
 
 ## 自動起動の設定
 $ sudo systemctl enable hello_world
+```
+
+## 仮想デスクトップ
+
+```
+Xvfb :1 -screen 0 1920x1080x24
+export DISPLAY=:1
+```
+
+```
+xvfb-run --server-num=1 [デスクトップアプリ起動コマンド]
 ```
 
 ## 他
